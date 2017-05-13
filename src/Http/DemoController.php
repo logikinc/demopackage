@@ -5,8 +5,8 @@ use Illuminate\Routing\Controller as BaseController;
 
 class DemoController extends BaseController
 {
-    public function index()
+    public function index($name)
     {
-        return \Demo::hello() . ' from controller.';
+        return view('mikewazovzky-demo::index', compact('name'));
     }
 }

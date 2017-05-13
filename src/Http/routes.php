@@ -8,4 +8,4 @@ Route::get('demo/hello', function () {
     return Demo::hello();
 });
 
-Route::get('demo', '\Mikewazovzky\Demo\Http\DemoController@index');
+Route::get('demo/{name}', '\Mikewazovzky\Demo\Http\DemoController@index');
