@@ -14,7 +14,5 @@
             "Mikewazovzky\\Demo\\": "src/"
         }
     },
-    "require": {
-		// "illuminate/support": "~5"
-	}
+    "require": {}
 }
