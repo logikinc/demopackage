@@ -14,8 +14,11 @@ class DemoServiceProvider extends ServiceProvider
         
         $this->publishes([
             __DIR__ . '/config/main.php' => config_path('mikewazovzky-demo.php'),
-            __DIR__ . '/views' => base_path('resources/views/vendor/mikewazovzky-demo'),
-        ]);
+        ], 'config');
+        
+        $this->publishes([
+            __DIR__ . '/views' => base_path('resources/views/vendor/mikewazovzky-demo')
+        ], 'view');        
 	}
 	
 	public function register()
