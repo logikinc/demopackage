@@ -1,0 +1,13 @@
+{
+    "name": "mikewazovzky/demo",
+    "description": "Demo Package",
+	"keywords": ["laravel", "demo"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mike Wazovzky",
+            "email": "mike.wazovzky@gmail.com"
+        }
+    ],
+    "require": {}
+}
