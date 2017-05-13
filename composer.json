@@ -9,5 +9,12 @@
             "email": "mike.wazovzky@gmail.com"
         }
     ],
-    "require": {}
+	"autoload": {
+        "psr-4": {
+            "Mikewazovzky\\Demo\\": "src/"
+        }
+    },
+    "require": {
+		"illuminate/support": "~5"
+	}
 }
