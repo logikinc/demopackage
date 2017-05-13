@@ -1,9 +1,11 @@
 <?php
 
 Route::get('demo/test', function () {
-    return 'Test';
+    return 'test';
 });
 
 Route::get('demo/hello', function () {
     return Demo::hello();
 });
+
+Route::get('demo', '\Mikewazovzky\Demo\Http\DemoController@index');
