@@ -8,14 +8,11 @@ class DemoServiceProvider extends ServiceProvider
     
 	public function boot()
 	{
-		$this->loadRoutesFrom(__DIR__ . '/routes.php');
+		$this->loadRoutesFrom(__DIR__ . '/Http/routes.php');
 	}
 	
 	public function register()
-    {
-        
-		include __DIR__.'/routes.php';
-		
+    {		
 		$this->app->bind('mikewazovzky-demo', function() {
             return new Demo;
         });
