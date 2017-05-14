@@ -6,7 +6,13 @@
 </head>
 <body>
 
-	<h1>Hello, {{ $name }}</h1>
+	<h1>List of Items</h1>
+	<ul>
+		{{ $items->count() }}
+		@foreach($items as $item)
+			<li><a href="#">{{ $item->name }}</a> {{ $item->description }}</li>
+		@endforeach	
+	</ul>
 
 <script src="js/scripts.js"></script>
 </body>
