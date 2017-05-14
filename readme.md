@@ -1,4 +1,4 @@
-<h2 align="center">Powered by
+<h2 align="center">
 	<img src="https://laravel.com/assets/img/components/logo-laravel.svg">
 </h2>
 
@@ -7,7 +7,7 @@ mikewazovzky\demo
 ### Description
 Laravel Package Template/Demo: Step-by-step Laravel Package creation  
 #### Version: 0.0.1
-Change log:  
+#### Change log:  
 0.0.1 initial project scaffolding
 #### Documentation
 See PHPDoc blocks in the code
