@@ -13,6 +13,8 @@ class DemoServiceProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__ . '/../views', 'mikewazovzky-demo');
 
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
+
+        $this->app->make('Illuminate\Database\Eloquent\Factory')->load(__DIR__ . '/../database/factories');
         
         $this->publishes([
             __DIR__ . '/../config/main.php' => config_path('mikewazovzky-demo.php'),
