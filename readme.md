@@ -12,13 +12,22 @@ Laravel Package Template/Demo: Step-by-step Laravel Package creation
 #### Documentation
 See PHPDoc blocks in the code
 #### Installation. 
-Pull the package into Laravel project 
+Pull the package into Laravel project,   
 ```
 composer require mikewazovzky/demopackage
 composer install
 ```
+update composer.json
+```
+...
+```
+update config/app.php
+```
+...
+```
+
 #### Testing. 
-Run project PHPUnit from package folder to test it 
+Update laravel composer.json and config/app.php, run project PHPUnit from package folder to test it 
 ```
 ../../../laravel/5.4.x/vendor/bin/phpunit
 ```
