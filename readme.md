@@ -12,22 +12,29 @@ Laravel Package Template/Demo: Step-by-step Laravel Package creation
 #### Documentation
 See PHPDoc blocks in the code
 #### Installation. 
-Pull the package into Laravel project,   
+- pull the package into Laravel project,  
+`composer require mikewazovzky/demopackage`
+- update composer.json autoload section
+- update config/app.php, add service provider 
+`\Mikewazovzky\Demopackage\DemopackageServiceProvider::class` 
+and Facade aliase     
+`'Demopackage' => Mikewazovzky\Demopackage\DemoFacade::class`
+
+
+#### Testing. 
+Update laravel 
+- composer.json, 
+- .env, 
+- config/app.php 
 ```
 composer require mikewazovzky/demopackage
 composer install
+cp ./vendor/[GITHUB_NAME]/[PACKAGE_NAME]/tests/config/composer.json ./
+composer dump-autoload
+cp ./vendor/[GITHUB_NAME]/[PACKAGE_NAME]/tests/config/.env ./
+cp ./vendor/[GITHUB_NAME]/[PACKAGE_NAME]/tests/config/app.php ./config
 ```
-update composer.json
-```
-...
-```
-update config/app.php
-```
-...
-```
-
-#### Testing. 
-Update laravel composer.json and config/app.php, run project PHPUnit from package folder to test it 
+and run project PHPUnit from package folder to test it 
 ```
 ../../../laravel/5.4.x/vendor/bin/phpunit
 ```
