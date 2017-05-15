@@ -3,7 +3,7 @@
 </h2>
 
 ### Project: 
-mikewazovzky\demo
+mikewazovzky\demopackage
 ### Description
 Laravel Package Template/Demo: Step-by-step Laravel Package creation  
 #### Version: 0.0.1
@@ -14,7 +14,7 @@ See PHPDoc blocks in the code
 #### Installation. 
 Pull the package into Laravel project 
 ```
-composer require mikewazovzky/demo
+composer require mikewazovzky/demopackage
 composer install
 ```
 #### Testing. 

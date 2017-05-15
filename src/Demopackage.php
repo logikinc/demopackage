@@ -1,7 +1,7 @@
 <?php
-namespace Mikewazovzky\Demo;
+namespace Mikewazovzky\Demopackage;
 
-class Demo
+class Demopackage
 {
     public function hello()
     {

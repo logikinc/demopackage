@@ -1,5 +1,5 @@
 <?php
-namespace Mikewazovzky\Demo;
+namespace Mikewazovzky\Demopackage;
 
 use Illuminate\Support\Facades\Facade;
 

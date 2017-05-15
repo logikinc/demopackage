@@ -1,13 +1,13 @@
 <?php
-namespace Mikewazovzky\Demo\Http;
+namespace Mikewazovzky\Demopackage\Http;
 
 use Illuminate\Routing\Controller as BaseController;
 
-class DemoController extends BaseController
+class DemopackageController extends BaseController
 {
     public function index()
     {
-        $items = \Mikewazovzky\Demo\Models\Item::all();
+        $items = \Mikewazovzky\Demopackage\Models\Item::all();
         // return $items;
         return view('mikewazovzky-demo::index', compact('items'));
     }

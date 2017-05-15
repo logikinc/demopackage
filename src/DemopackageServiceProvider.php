@@ -1,9 +1,9 @@
 <?php
-namespace Mikewazovzky\Demo;
+namespace Mikewazovzky\Demopackage;
 
 use Illuminate\Support\ServiceProvider;
 
-class DemoServiceProvider extends ServiceProvider
+class DemopackageServiceProvider extends ServiceProvider
 {
     
 	public function boot()
@@ -40,7 +40,7 @@ class DemoServiceProvider extends ServiceProvider
         );        
         // load and make available to the application package facade
         $this->app->bind('mikewazovzky-demo', function() {
-            return new Demo;
+            return new Demopackage;
         });
     }	
 }

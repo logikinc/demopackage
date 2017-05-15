@@ -5,9 +5,9 @@ Route::get('demo/test', function () {
 });
 
 Route::get('demo/hello', function () {
-    return Demo::hello();
+    return Demopackage::hello();
 });
 
-Route::get('name/{name?}', '\Mikewazovzky\Demo\Http\DemoController@name');
+Route::get('name/{name?}', '\Mikewazovzky\Demopackage\Http\DemopackageController@name');
 
-Route::get('demo', '\Mikewazovzky\Demo\Http\DemoController@index');
+Route::get('demo', '\Mikewazovzky\Demopackage\Http\DemopackageController@index');
