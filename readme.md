@@ -13,7 +13,9 @@ Laravel Package Template/Demo: Step-by-step Laravel Package creation
 See PHPDoc blocks in the code
 #### Installation. 
 - pull the package into Laravel project,  
-`composer require mikewazovzky/demopackage`
+```
+	composer require mikewazovzky/demopackage
+```
 - update composer.json autoload section
 ```
     "psr-4": {
@@ -23,9 +25,13 @@ See PHPDoc blocks in the code
 ```
 
 - update config/app.php, add service provider 
-	`\Mikewazovzky\Demopackage\DemopackageServiceProvider::class` 
+```
+	\Mikewazovzky\Demopackage\DemopackageServiceProvider::class
+``` 
 and Facade aliase     
-	`'Demopackage' => Mikewazovzky\Demopackage\DemoFacade::class`
+```
+	'Demopackage' => Mikewazovzky\Demopackage\DemoFacade::class
+```
 
 
 #### Testing. 
