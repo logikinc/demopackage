@@ -35,10 +35,7 @@ and Facade aliase
 
 
 #### Testing. 
-Update laravel 
-- composer.json, 
-- .env, 
-- config/app.php 
+Pull the package into [new] Laravel project, update composer.json, .env, and  config/app.php files
 ```
 	composer require mikewazovzky/demopackage
 	composer install
