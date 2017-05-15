@@ -34,17 +34,30 @@ and Facade aliase
 ```
 
 
-#### Testing. 
+#### Testing package. 
 Pull the package into [new] Laravel project, update composer.json, .env, and  config/app.php files
+before_script:
 ```
-	composer require mikewazovzky/demopackage
-	composer install
-	cp ./vendor/[GITHUB_NAME]/[PACKAGE_NAME]/tests/config/composer.json ./
-	composer dump-autoload
+	composer self-update
+	composer create-project laravel/laravel
+	cd ./laravel
+	composer config repositories.[GITHUB_NAME] vcs https://github.com/[GITHUB_NAME]/[PACKAGE_NAME].git
+	composer require [GITHUB_NAME]/[PACKAGE_NAME] dev-master
+	composer update
 	cp ./vendor/[GITHUB_NAME]/[PACKAGE_NAME]/tests/config/.env ./
+	rm ./config/app.php
 	cp ./vendor/[GITHUB_NAME]/[PACKAGE_NAME]/tests/config/app.php ./config
+	php artisan vendor:publish
+	mysql -e "create database IF NOT EXISTS test;" -uroot
+	php artisan migrate
+	cd ./vendor/[GITHUB_NAME]/[PACKAGE_NAME]
 ```
 and run project PHPUnit from package folder to test it 
+script:
+```
+	phpunit
+```
+alternatively run PHPUnit from  package development folder
 ```
 	../../../laravel/5.4.x/vendor/bin/phpunit
 ```
