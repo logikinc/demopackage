@@ -21,6 +21,7 @@ before_script:
   - cd ./laravel
   - composer config repositories.mikewazovzky vcs https://github.com/mikewazovzky/demopackage.git
   - composer require mikewazovzky/demopackage dev-master
+  - composer require satooshi/php-coveralls ^1.0
   - composer update
   - cp ./vendor/mikewazovzky/demopackage/tests/config/.env ./
   - rm ./config/app.php

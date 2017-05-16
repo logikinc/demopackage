@@ -14,5 +14,7 @@
             "Mikewazovzky\\Demopackage\\": "src/"
         }
     },
-    "require": {}
+    "require": {
+        
+    }
 }
