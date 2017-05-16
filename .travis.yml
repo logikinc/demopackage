@@ -1,19 +1,9 @@
 # see http://about.travis-ci.org/docs/user/languages/php/ for more hints
 language: php
 
-# variables
-
-# list any PHP version you want to test against
 php:
   # using major version aliases
   - 7.0
-  # aliased to a recent hhvm version
-  # - hhvm
-
-# optionally set up exclutions and allowed failures in the matrix
-matrix:
-  allow_failures:
-    - php: hhvm
 
 before_script:
   - composer self-update
@@ -22,10 +12,11 @@ before_script:
   - composer config repositories.mikewazovzky vcs https://github.com/mikewazovzky/demopackage.git
   - composer require mikewazovzky/demopackage dev-master
   - composer require satooshi/php-coveralls ^1.0
-  - composer update
+  # - composer update
   - cp ./vendor/mikewazovzky/demopackage/tests/config/.env ./
   - rm ./config/app.php
   - cp ./vendor/mikewazovzky/demopackage/tests/config/app.php ./config
+  # - mysql -e "create database IF NOT EXISTS test;" -uroot
   # - php artisan migrate
   - mkdir -p build/logs  
   - cd ./vendor/mikewazovzky/demopackage
