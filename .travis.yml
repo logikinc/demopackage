@@ -1,10 +1,15 @@
 # see http://about.travis-ci.org/docs/user/languages/php/ for more hints
 language: php
 
+# variables
+env:
+  - GITHUB_NAME=mikewazovzky
+  - PACKAGE_NAME=demopackage
+
 # list any PHP version you want to test against
 php:
   # using major version aliases
-  - 7.1
+  - 7.0
   # aliased to a recent hhvm version
   # - hhvm
 
@@ -17,15 +22,15 @@ before_script:
   - composer self-update
   - composer create-project laravel/laravel
   - cd ./laravel
-  - composer config repositories.[GITHUB_NAME] vcs https://github.com/[GITHUB_NAME]/[PACKAGE_NAME].git
-  - composer require [GITHUB_NAME]/[PACKAGE_NAME] dev-master
+  - composer config repositories.$GITHUB_NAME vcs https://github.com/$GITHUB_NAME/$PACKAGE_NAME.git
+  - composer require $GITHUB_NAME/$PACKAGE_NAME dev-master
   - composer update
-  - cp ./vendor/[GITHUB_NAME]/[PACKAGE_NAME]/tests/config/.env ./
+  - cp ./vendor/$GITHUB_NAME/$PACKAGE_NAME/tests/config/.env ./
   - rm ./config/app.php
-  - cp ./vendor/[GITHUB_NAME]/[PACKAGE_NAME]/tests/config/app.php ./config
+  - cp ./vendor/$GITHUB_NAME/$PACKAGE_NAME/tests/config/app.php ./config
   - php artisan migrate
   - mkdir -p build/logs  
-  - cd ./vendor/[GITHUB_NAME]/[PACKAGE_NAME]
+  - cd ./vendor/$GITHUB_NAME/$PACKAGE_NAME
 
 script:
   - vendor/bin/phpunit --coverage-clover build/logs/clover.xml
