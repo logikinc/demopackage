@@ -1,0 +1,34 @@
+# see http://about.travis-ci.org/docs/user/languages/php/ for more hints
+language: php
+
+# list any PHP version you want to test against
+php:
+  # using major version aliases
+  - 7.1
+  # aliased to a recent hhvm version
+  # - hhvm
+
+# optionally set up exclutions and allowed failures in the matrix
+matrix:
+  allow_failures:
+    - php: hhvm
+
+before_script:
+  - composer self-update
+  - composer create-project laravel/laravel
+  - cd ./laravel
+  - composer config repositories.[GITHUB_NAME] vcs https://github.com/[GITHUB_NAME]/[PACKAGE_NAME].git
+  - composer require [GITHUB_NAME]/[PACKAGE_NAME] dev-master
+  - composer update
+  - cp ./vendor/[GITHUB_NAME]/[PACKAGE_NAME]/tests/config/.env ./
+  - rm ./config/app.php
+  - cp ./vendor/[GITHUB_NAME]/[PACKAGE_NAME]/tests/config/app.php ./config
+  - php artisan migrate
+  - mkdir -p build/logs  
+  - cd ./vendor/[GITHUB_NAME]/[PACKAGE_NAME]
+
+script:
+  - vendor/bin/phpunit --coverage-clover build/logs/clover.xml
+
+after_success:
+- travis_retry php vendor/bin/coveralls
