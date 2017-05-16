@@ -2,9 +2,6 @@
 language: php
 
 # variables
-env:
-  - GITHUB_NAME=mikewazovzky
-  - PACKAGE_NAME=demopackage
 
 # list any PHP version you want to test against
 php:
@@ -22,15 +19,15 @@ before_script:
   - composer self-update
   - composer create-project laravel/laravel
   - cd ./laravel
-  - composer config repositories.$GITHUB_NAME vcs https://github.com/$GITHUB_NAME/$PACKAGE_NAME.git
-  - composer require $GITHUB_NAME/$PACKAGE_NAME dev-master
+  - composer config repositories.mikewazovzky vcs https://github.com/mikewazovzky/demopackage.git
+  - composer require mikewazovzky/demopackage dev-master
   - composer update
-  - cp ./vendor/$GITHUB_NAME/$PACKAGE_NAME/tests/config/.env ./
+  - cp ./vendor/mikewazovzky/demopackage/tests/config/.env ./
   - rm ./config/app.php
-  - cp ./vendor/$GITHUB_NAME/$PACKAGE_NAME/tests/config/app.php ./config
+  - cp ./vendor/mikewazovzky/demopackage/tests/config/app.php ./config
   - php artisan migrate
   - mkdir -p build/logs  
-  - cd ./vendor/$GITHUB_NAME/$PACKAGE_NAME
+  - cd ./vendor/mikewazovzky/demopackage
 
 script:
   - vendor/bin/phpunit --coverage-clover build/logs/clover.xml
