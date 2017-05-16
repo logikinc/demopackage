@@ -25,7 +25,7 @@ before_script:
   - cp ./vendor/mikewazovzky/demopackage/tests/config/.env ./
   - rm ./config/app.php
   - cp ./vendor/mikewazovzky/demopackage/tests/config/app.php ./config
-  - php artisan migrate
+  # - php artisan migrate
   - mkdir -p build/logs  
   - cd ./vendor/mikewazovzky/demopackage
 
