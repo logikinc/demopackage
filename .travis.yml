@@ -22,7 +22,7 @@ before_script:
   - cd ./vendor/mikewazovzky/demopackage
 
 script:
-  - ../../../vendor/bin/phpunit --coverage-clover ../../../build/logs/clover.xml
+  - ../../../vendor/bin/phpunit --coverage-clover build/logs/clover.xml
 
 after_success:
 - ls
