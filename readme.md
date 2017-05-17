@@ -1,5 +1,4 @@
 [![Build Status](https://travis-ci.org/mikewazovzky/demopackage.svg?branch=master)](https://travis-ci.org/mikewazovzky/demopackage)
-
 [![Coverage Status](https://coveralls.io/repos/github/mikewazovzky/demopackage/badge.svg?branch=master)](https://coveralls.io/github/mikewazovzky/demopackage?branch=master)
 
 <h2 align="center">
@@ -20,48 +19,23 @@ See PHPDoc blocks in the code
 ```
 	composer require mikewazovzky/demopackage
 ```
-- update composer.json autoload section
-```
-    "psr-4": {
-        "App\\": "app/",
-		"Mikewazovzky\\Demopackage\\": "packages/Mikewazovzky/Demopackage/src/"
-    }
-```
-
-- update config/app.php, add service provider 
-```
+#### Testing package. 
+1. Create test laravel project   
+1.1. copy `./env` file from `/tests/config/`  
+1.2. replace `/config/app.php` by `/tests/config/app.php` or add Packege Server Provider and Facade alias
+ ```
 	\Mikewazovzky\Demopackage\DemopackageServiceProvider::class
-``` 
-and Facade aliase     
-```
+	...
 	'Demopackage' => Mikewazovzky\Demopackage\DemoFacade::class
 ```
-
-
-#### Testing package. 
-Pull the package into [new] Laravel project, update composer.json, .env, and  config/app.php files
-before_script:
+1.3. update composer.json autoload section
 ```
-	composer self-update
-	composer create-project laravel/laravel
-	cd ./laravel
-	composer config repositories.[GITHUB_NAME] vcs https://github.com/[GITHUB_NAME]/[PACKAGE_NAME].git
-	composer require [GITHUB_NAME]/[PACKAGE_NAME] dev-master
-	composer update
-	cp ./vendor/[GITHUB_NAME]/[PACKAGE_NAME]/tests/config/.env ./
-	rm ./config/app.php
-	cp ./vendor/[GITHUB_NAME]/[PACKAGE_NAME]/tests/config/app.php ./config
-	php artisan vendor:publish
-	mysql -e "create database IF NOT EXISTS test;" -uroot
-	php artisan migrate
-	cd ./vendor/[GITHUB_NAME]/[PACKAGE_NAME]
+    "psr-4": {
+        "App\\": "app/",  
+        "Mikewazovzky\\Demopackage\\": "packages/Mikewazovzky/Demopackage/src/"
+    }
 ```
-and run project PHPUnit from package folder to test it 
-script:
-```
-	phpunit
-```
-alternatively run PHPUnit from  package development folder
+2. Run PHPUnit from package folder
 ```
 	../../../laravel/5.4.x/vendor/bin/phpunit
 ```
