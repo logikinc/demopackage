@@ -21,10 +21,10 @@ before_script:
   # - mysql -e "create database IF NOT EXISTS test;" -uroot
   # - php artisan migrate
   - mkdir -p build/logs  
-  - cd ./vendor/$GITHUB_NAME/$PACKAGE_NAME
+  # - cd ./vendor/$GITHUB_NAME/$PACKAGE_NAME
 
 script:
-  - ../../../vendor/bin/phpunit --coverage-clover ../../../build/logs/clover.xml
+  - vendor/bin/phpunit --coverage-clover build/logs/clover.xml
 
 after_success:
 - travis_retry php vendor/bin/coveralls
