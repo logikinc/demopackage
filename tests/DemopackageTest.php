@@ -20,13 +20,13 @@ class DemopackageTest extends TestCase
     /** @test */
     function it_can_see_test_page()
     {
-        $this->get('/test')
+        $this->get('demo/test')
             ->assertSee('test');
     }     
     /** @test */
     function facade_works()
     {
-        $this->get('/hello')
+        $this->get('demo/hello')
             ->assertSee(\Demopackage::hello());
     }      
     /** @test */
