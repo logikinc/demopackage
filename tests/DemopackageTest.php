@@ -8,12 +8,27 @@ class DemopackageTest extends TestCase
 {
     use DatabaseMigrations;
 
+    public static function setUpBeforeClass()
+    {
+        echo 'Mikewazovzky\Demopackage Unit Tests '; 
+    }
     /** @test */
     function it_does_something()
-    {
-		echo 'Mikewazovzky\Demopackage Unit Tests';	
+    {		
 		$this->assertTrue(true);
     }
+    /** @test */
+    function it_can_see_test_page()
+    {
+        $this->get('/test')
+            ->assertSee('test');
+    }     
+    /** @test */
+    function facade_works()
+    {
+        $this->get('/hello')
+            ->assertSee(\Demopackage::hello());
+    }      
     /** @test */
     function it_can_read_config_data_and_dispay_it_on_name_page()
     {
@@ -26,6 +41,10 @@ class DemopackageTest extends TestCase
     {
 		$item = factory(\Mikewazovzky\Demopackage\Models\Item::class)->create();	
 		$this->assertCount(1, \Mikewazovzky\Demopackage\Models\Item::all());
+        $this->assertDatabaseHas('mikewazovzky_items', [
+            'name' => $item->name,
+            'description' => $item->description
+        ]);
     }
 
     /** @test */
