@@ -17,27 +17,27 @@ See PHPDoc blocks in the code
 #### Installation. 
 - pull the package into Laravel project,  
 ```
-	composer require mikewazovzky/demopackage
+composer require mikewazovzky/demopackage
 ```
 #### Testing package. 
 1. Create test laravel project   
 1.1. copy `./env` file from `/tests/config/`  
 1.2. replace `/config/app.php` by `/tests/config/app.php` or add Packege Server Provider and Facade alias
  ```
-	\Mikewazovzky\Demopackage\DemopackageServiceProvider::class
-	...
-	'Demopackage' => Mikewazovzky\Demopackage\DemoFacade::class
+\Mikewazovzky\Demopackage\DemopackageServiceProvider::class
+...
+'Demopackage' => Mikewazovzky\Demopackage\DemoFacade::class
 ```
 1.3. update composer.json autoload section
 ```
-    "psr-4": {
-        "App\\": "app/",  
-        "Mikewazovzky\\Demopackage\\": "packages/Mikewazovzky/Demopackage/src/"
-    }
+"psr-4": {
+	"App\\": "app/",  
+	"Mikewazovzky\\Demopackage\\": "packages/Mikewazovzky/Demopackage/src/"
+}
 ```
 2. Run PHPUnit from package folder
 ```
-	../../../laravel/5.4.x/vendor/bin/phpunit
+../../../laravel/5.4.x/vendor/bin/phpunit
 ```
 
 
