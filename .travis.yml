@@ -6,8 +6,8 @@ php:
   - 7.0
 
 before_script:
-  - GITHIB_NAME = mikewazovzky
-  - PACKAGE_NAME = demopackage
+  - set GITHIB_NAME = mikewazovzky
+  - set PACKAGE_NAME = demopackage
   - composer self-update
   - composer create-project laravel/laravel
   - cd ./laravel
