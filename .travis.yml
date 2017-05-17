@@ -6,11 +6,13 @@ php:
   - 7.0
 
 before_script:
+  - GITHIB_NAME = mikewazovzky
+  - PACKAGE_NAME = demopackage
   - composer self-update
   - composer create-project laravel/laravel
   - cd ./laravel
   - composer config repositories.mikewazovzky vcs https://github.com/mikewazovzky/demopackage.git
-  - composer require mikewazovzky/demopackage dev-master
+  - composer require $GITHIB_NAME/$PACKAGE_NAME dev-master
   - composer require satooshi/php-coveralls ^1.0
   # - composer update
   - cp ./vendor/mikewazovzky/demopackage/tests/config/.env ./
@@ -22,8 +24,7 @@ before_script:
   - cd ./vendor/mikewazovzky/demopackage
 
 script:
-  - ../../../vendor/bin/phpunit --coverage-clover build/logs/clover.xml
+  - ../../../vendor/bin/phpunit --coverage-clover ../../../build/logs/clover.xml
 
 after_success:
-- ls
 - travis_retry php vendor/bin/coveralls
