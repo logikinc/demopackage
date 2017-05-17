@@ -31,8 +31,8 @@ composer require mikewazovzky/demopackage
 1.3. update composer.json autoload section
 ```
 "psr-4": {
-	"App\\": "app/",  
-	"Mikewazovzky\\Demopackage\\": "packages/Mikewazovzky/Demopackage/src/"
+    "App\\": "app/",  
+    "Mikewazovzky\\Demopackage\\": "packages/Mikewazovzky/Demopackage/src/"
 }
 ```
 2. Run PHPUnit from package folder
