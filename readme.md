@@ -1,5 +1,7 @@
 [![Build Status](https://travis-ci.org/mikewazovzky/demopackage.svg?branch=master)](https://travis-ci.org/mikewazovzky/demopackage)
 
+[![Coverage Status](https://coveralls.io/repos/github/mikewazovzky/demopackage/badge.svg?branch=master)](https://coveralls.io/github/mikewazovzky/demopackage?branch=master)
+
 <h2 align="center">
 	<img src="https://laravel.com/assets/img/components/logo-laravel.svg">
 </h2>
