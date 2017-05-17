@@ -20,22 +20,22 @@ See PHPDoc blocks in the code
 composer require mikewazovzky/demopackage
 ```
 #### Testing package. 
-1. Create test laravel project   
-1.1. copy `./env` file from `/tests/config/`  
-1.2. replace `/config/app.php` by `/tests/config/app.php` or add Packege Server Provider and Facade alias
+Create test laravel project   
+1. copy `./env` file from `/tests/config/`  
+2. replace `/config/app.php` by `/tests/config/app.php` or add Packege Server Provider and Facade alias
  ```
 \Mikewazovzky\Demopackage\DemopackageServiceProvider::class
 ...
 'Demopackage' => Mikewazovzky\Demopackage\DemoFacade::class
 ```
-1.3. update composer.json autoload section
+3. update composer.json autoload section
 ```
 "psr-4": {
     "App\\": "app/",  
     "Mikewazovzky\\Demopackage\\": "packages/Mikewazovzky/Demopackage/src/"
 }
 ```
-2. Run PHPUnit from package folder
+Run PHPUnit from package folder
 ```
 ../../../laravel/5.4.x/vendor/bin/phpunit
 ```
