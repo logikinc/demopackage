@@ -2,8 +2,7 @@
 <html>
 <head>
 	<title>Test</title>
-	<link rel="stylesheet" href="css/styles.css">
-</head>
+	<link rel="stylesheet" href="/vendor/mikewazovzky/css/styles.css"></head>
 <body>
 
 	<h1>List of Items</h1>
@@ -14,6 +13,6 @@
 		@endforeach	
 	</ul>
 
-<script src="js/scripts.js"></script>
+<script src="/vendor/mikewazovzky/js/scripts.js"></script>
 </body>
 </html>

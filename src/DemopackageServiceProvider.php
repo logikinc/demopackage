@@ -29,7 +29,11 @@ class DemopackageServiceProvider extends ServiceProvider
         // --tag=migrations
         $this->publishes([
             __DIR__ . '/../database/migrations' => $this->app->databasePath() . '/migrations'
-        ], 'migrations');      
+        ], 'migrations');  
+        // --tag=public
+		$this->publishes([
+			__DIR__.'/../assets' => public_path('vendor/mikewazovzky'),
+		], 'public');		
 	}
 	
 	public function register()
